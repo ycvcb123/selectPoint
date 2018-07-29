@@ -1,0 +1,26 @@
+<view class="container">
+    <view class="current_location_info">
+        <view class="locationlist-ico iconfont iconfont-location"></view>
+        <view class="info">我的位置</view>
+        <view class="flex">
+            <view class="info-detail">
+                {{handle_mapCenterLocation}}
+            </view>
+            <view class="flex-1">
+                <view class="button" catch:tap="gotoUrl">确定</view>
+            </view>
+        </view>
+    </view>
+    <map class="map" id="select_point" bindregionchange="_regionchange">
+
+        <cover-view class="target-label {{targetMoving ? 'dsn' : ''}}">
+            <cover-view class='padding' style="display: inline-block">
+                {{mapCenterLocation}}
+            </cover-view>
+        </cover-view>
+
+        <cover-image src="./arrow_down.png" class="triangle {{isIphoneX ? 'x-top' : ''}} {{targetMoving ? 'dsn' : ''}}"></cover-image>
+        <cover-image class="target-ico-location" src="./location.png"></cover-image>
+
+    </map>
+</view>
